@@ -7,8 +7,57 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Start</ion-label>
+      <ion-select id="start" (ionChange)="calcRoute()" name="start" [(ngModel)]="start">
+        <ion-option value="chicago, il">Chicago</ion-option>
+        <ion-option value="st louis, mo">St Louis</ion-option>
+        <ion-option value="joplin, mo">Joplin, MO</ion-option>
+        <ion-option value="oklahoma city, ok">Oklahoma City</ion-option>
+        <ion-option value="amarillo, tx">Amarillo</ion-option>
+        <ion-option value="gallup, nm">Gallup, NM</ion-option>
+        <ion-option value="flagstaff, az">Flagstaff, AZ</ion-option>
+        <ion-option value="winona, az">Winona</ion-option>
+        <ion-option value="kingman, az">Kingman</ion-option>
+        <ion-option value="barstow, ca">Barstow</ion-option>
+        <ion-option value="san bernardino, ca">San Bernardino</ion-option>
+        <ion-option value="los angeles, ca">Los Angeles</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>End</ion-label>
+      <ion-select id="end" (ionChange)="calcRoute()" name="end" [(ngModel)]="end">
+        <ion-option value="chicago, il">Chicago</ion-option>
+        <ion-option value="st louis, mo">St Louis</ion-option>
+        <ion-option value="joplin, mo">Joplin, MO</ion-option>
+        <ion-option value="oklahoma city, ok">Oklahoma City</ion-option>
+        <ion-option value="amarillo, tx">Amarillo</ion-option>
+        <ion-option value="gallup, nm">Gallup, NM</ion-option>
+        <ion-option value="flagstaff, az">Flagstaff, AZ</ion-option>
+        <ion-option value="winona, az">Winona</ion-option>
+        <ion-option value="kingman, az">Kingman</ion-option>
+        <ion-option value="barstow, ca">Barstow</ion-option>
+        <ion-option value="san bernardino, ca">San Bernardino</ion-option>
+        <ion-option value="los angeles, ca">Los Angeles</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Travel mode</ion-label>
+        <ion-select id="selectedMode" (ionChange)="calcRoute()" name="selectedMode" [(ngModel)]="selectedMode">
+          <ion-option value="DRIVING">Driving</ion-option>
+          <ion-option value="WALKING">Walking</ion-option>
+          <ion-option value="BICYCLING">Bicycling</ion-option>
+          <ion-option value="TRANSIT">Transit</ion-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-list>
+
+  <div id="map" #map></div>
+
 </ion-content>
